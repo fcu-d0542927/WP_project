@@ -14,12 +14,17 @@
 
     <!-- Custom styles for this template -->
     <link href="justified-nav.css" rel="stylesheet">
-   <style>
+<style>
 body {
     background: rgb(242,242,242);";
 }
 .mySlides {display:none;}
-
+#map {
+        height: 500px;
+        width:80%;
+        position: absolute;
+        right:10%;
+    }
 
 </style>
   </head>
@@ -79,7 +84,16 @@ body {
 		
       </header>
 
-	  
+    
+      <div id="map"></div>
+	  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   
+
+      <a href="https://www.tta.gov.tw/schedule/realtime.asp" target="_blank" title="飛機">飛機時刻表</a>
+      <a>&nbsp&nbsp</a>
+      <a href="https://www.google.com.tw/search?q=%E6%9D%BE%E5%B1%B1+%E8%98%AD%E5%B6%BC+%E9%A3%9B%E6%A9%9F&spell=1&sa=X&ved=0ahUKEwiivsKw_qfYAhULVrwKHTNKDKkQvwUIIygA&biw=1745&bih=863" target="_blank" title="飛機">台北 -> 蘭嶼</a>
+
+      
 	  
 	  
 
@@ -93,6 +107,24 @@ body {
       </footer>
 
     </div> <!-- /container -->
+
+
+
+    <!--map-->
+    <script>
+        function initMap() {
+            var orchid = { lat: 22.051557, lng: 121.549805 };
+            var map = new
+                google.maps.Map(document.getElementById('map'), {
+                    zoom: 12,
+                    center: orchid
+                });
+            var marker = new google.maps.Marker({
+                position: orchid,
+                map: map
+            });
+        }
+    </script>
     
 
     <!-- Bootstrap core JavaScript
@@ -102,5 +134,9 @@ body {
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="./popper.min.js"></script>
     <script src="./bootstrap.min.js"></script>
+    <script src="./dist/js/bootstrap.min.js"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ3KHYNBheFkeRoTTkN9bpO06MD6NUqXo&callback=initMap">
+        </script>
   </body>
 </html>

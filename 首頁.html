@@ -8,26 +8,33 @@
     <link rel="icon" href="./favicon.ico">
 
     <title>湛蘭大地</title>
-
+	
     <!-- Bootstrap core CSS -->
     <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
     <!-- Custom styles for this template -->
     <link href="justified-nav.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+	<link rel = "stylesheet" href = "./calendar/core.css">
+	<link rel = "stylesheet" href = "./calendar/calendar.css>
+	
   </head>
 
   <body>
- 
-   
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="*" valign="top" >
+	     <tr> 
+	       <td valign="top"><div align="right">
+			 <a href="/maplink.php?menu=217&typeid=217" accesskey="U" title="上層副選單功能區" class="white">:::</a> 
+	         <span class="tdbb">│<a title="回首頁" href="file:///C:/Users/ASUS/Desktop/web%20project/%E9%A6%96%E9%A0%81.html">回首頁</a>│<a title="Facebook" href="/content_edit.php?menu=2680&typeid=2680" target="_blank">Facebook</a>│<a title="蘭嶼觀光旅遊網" href="http://lanyu.twgov.mobi/travel/" target="_blank">蘭嶼觀光旅遊網</a></span>&nbsp;
+	             </div>
+	       </td>
+	     </tr> 
+    </table>
 	<div class="container">
 
       <header class="masthead"> 
 	  
-        <h1><a class="text-muted" href="./index.html">湛蘭大地</a>
-		<img src="./Lan4.png" width="900" height="100" style="width:100%"  ></h1>
+        <h1><a class="text-muted" href="./首頁.html">湛蘭大地</a>
+		<img src="./Lan5.png" width="900" height="100" style="width:100%"></h1>
         
         <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
 		
@@ -38,7 +45,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav text-md-center nav-justified w-100">
 			<li class="nav-item active">
-                <a class="nav-link" href="./index.html">首頁 </a>
+                <a class="nav-link" href="./首頁.html">首頁 </a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="./旅遊資訊.html">旅遊資訊 </a>
@@ -61,21 +68,41 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </nav>
-		<div id="map"></div>
 
 <style>
 body {
-    background: rgb(0, 0, 0);";
+    background: rgb(255,255,255);";
 }
-.mySlides {display:none;}
+h1.talk {
+	color: #000000;
+}
+td.w {
+	color:#000000;
+}
+th.w {
+	color:#000000;
+}
+
+#left {   
+    float: left;
+    width: 75%;
+}
+
+.rightcolumn {
+    float: right;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
 
 </style>
-<body>
+
+
 
 <div class="w3-content w3-section" style="max-width:1100px">
-  <img class="mySlides" src="./Lan1.jpg" style="width:100%" class="img-thumbnail" alt="Cinque Terre" width="304" >
-  <img class="mySlides" src="./Lan2.jpg" style="width:100%" class="img-thumbnail" alt="Cinque Terre" width="304" >
-  <img class="mySlides" src="./Lan3.jpg" style="width:100%" class="img-thumbnail" alt="Cinque Terre" width="304" >
+  <img class="mySlides" src="./Lan1.jpg" style="width:100%" class="img-thumbnail" alt="Cinque Terre" width="304">
+  <img class="mySlides" src="./Lan2.jpg" style="width:100%" class="img-thumbnail" alt="Cinque Terre" width="304">
+  <img class="mySlides" src="./Lan3.jpg" style="width:100%" class="img-thumbnail" alt="Cinque Terre" width="304">
 </div>
 
 <script>
@@ -93,9 +120,9 @@ function carousel() {
     x[myIndex-1].style.display = "block";
     setTimeout(carousel, 2500); // Change image every 2 seconds
 }
+</script>
 
-
-
+<script>
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -124,16 +151,50 @@ function showSlides(n) {
 }
 
 </script>
-
       </header>
-     
+	  <br></br>
+	  <br></br>
+      <div class = "rightcolumn">
+	  
+	 <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;height=250&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=kp4b6j0rndtfj8ei353jgh5je4%40group.calendar.google.com&amp;color=%23528800&amp;ctz=Asia%2FTaipei" style="border-width:0" width="250" height = "275" frameborder = "0" scrolling = "no"></iframe>
+</div>
+      <div class="container" style="border-collapse: inherit" id = "left">
+     <h1 class = "talk">公佈欄</h1>      
+  <table class="table" border = 2 >
+    <thead>
+      <tr>
+        <th class = "w">議題</th>
+        <th class = "w">最新貼文</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <a href=http://www.lanyu.gov.tw/circulatedview.php?menu=2703&typeid=1760&circulated_id=371 >做環保 集綠點 享回饋 </a></td>
+        <td class = "w">2017/12/26</td>
+      </tr>
+      <tr>
+        <td> <a href=http://www.lanyu.gov.tw/circulatedview.php?menu=2703&typeid=1760&circulated_id=359 >106學年度沉浸式族語教學新辦幼兒園遴選須知 </a></td>
+        <td class = "w">2017/12/27</td>
+      </tr>
+      <tr>
+        <td><a href=http://www.lanyu.gov.tw/circulatedview.php?menu=2703&typeid=1760&circulated_id=362 >參與環保集點活動 </a></td>
+        <td class = "w">2017/12/27</td>
+      </tr>
+	  <tr>
+        <td><a href=http://www.lanyu.gov.tw/circulatedview.php?menu=2703&typeid=1760&circulated_id=3 >蘭嶼鄉公所辦理106年度春節返鄉免費乘船交通疏運計畫 </a></td>
+        <td class = "w">2017/12/27</td>
+      </tr>
+    </tbody>
+  </table>
+
+
       <main role="main">
 
         <!-- Jumbotron -->
       </main>
       <!-- Site footer -->
       <footer class="footer">
-	    <p align="center"><a href="#" id="goTop">^</a></p>  
+        <p align="center"><a href="#" id="goTop">^</a></p>  
         <p>&copy; Project 2017</p>
       </footer>
 
@@ -147,5 +208,7 @@ function showSlides(n) {
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="./assets/js/vendor/popper.min.js"></script>
     <script src="./dist/js/bootstrap.min.js"></script>
+	<script scr = "./calendar/calender.js"></script>
+	<script scr = "./calendar/body.css"></script>
   </body>
 </html>

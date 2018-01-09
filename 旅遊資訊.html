@@ -26,9 +26,9 @@ body {
 .mySlides {display:none;}
 #map {
         height: 500px;
-        width:80%;
-        position: absolute;
-        right:10%;
+        width:900px;
+        
+        
     }
 
 	
@@ -90,7 +90,7 @@ body {
       </header>
 
     
-      <div id="map"></div>
+      <div id="map" style="width:100%"></div>
 	  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
    
 
@@ -128,6 +128,159 @@ body {
                 position: orchid,
                 map: map
             });
+
+            var icons ={
+              hotel:{
+                icon:'./睡覺.png'
+              },
+              airport:{
+                icon:'./飛機.png'
+              },
+              attraction:{
+                icon:'./attraction.png'
+              },
+              aboriginal:{
+                icon:'./原住民.png'
+              },
+              port:{
+                icon:'./漁港.png'
+              }
+            }
+
+            var features = [
+            {
+              position: new google.maps.LatLng(22.057732,121.508166),
+              type: 'port',
+              title: '開元漁港',
+              address: '漁港'
+            },{
+              position: new google.maps.LatLng(22.027948,121535790),
+              type: 'airport',
+              title: '蘭嶼航空站',
+              address: '台東縣蘭嶼鄉紅頭村漁人151號'
+            },{
+              position: new google.maps.LatLng(22.050441,121.512926),
+              type: 'hotel',
+              title: '蘭翔民宿',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.049945,121.512979),
+              type: 'hotel',
+              title: '蘭嶼海洋國際渡假飯店',
+              address: '台東縣蘭嶼鄉22號'
+            },{
+              position: new google.maps.LatLng(22.077633,121.526316),
+              type: 'hotel',
+              title: '人之島民宿',
+              address: '台東縣蘭嶼鄉朗島村274號'
+            },{
+              position: new google.maps.LatLng(22.039370,121.566985),
+              type: 'hotel',
+              title: '蘭嶼海的窩',
+              address: '台灣台東縣蘭嶼鄉東清村野銀部落'
+            },{
+              position: new google.maps.LatLng(22.051050,121.512770),
+              type: 'attraction',
+              title: '蘭色大門',
+              address: '景點'
+            },{
+              position: new google.maps.LatLng(22.020883,121.572784),
+              type: 'attraction',
+              title: '大天池',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.006153,121.573115),
+              type: 'attraction',
+              title: '青青草原',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.033379,121.576727),
+              type: 'attraction',
+              title: '蘭嶼野銀冷泉',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.047588,121.565443),
+              type: 'attraction',
+              title: '東清灣',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.060447,121.569223),
+              type: 'attraction',
+              title: '東清秘境',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.061670,121.574139),
+              type: 'attraction',
+              title: '情人洞',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.085159,121.567262),
+              type: 'attraction',
+              title: '雙獅岩',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.077541,121.510128),
+              type: 'attraction',
+              title: '小天池',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.077658,121.526002),
+              type: 'aboriginal',
+              title: '郎島部落',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.050367,121.513797),
+              type: 'aboriginal',
+              title: '椰油部落',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.057835,121.564384),
+              type: 'aboriginal',
+              title: '東清部落',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.027510,121.542230),
+              type: 'aboriginal',
+              title: '漁人部落',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.026564,121.552660),
+              type: 'aboriginal',
+              title: '紅頭部落',
+              address: ''
+            },{
+              position: new google.maps.LatLng(22.037202,121.566403),
+              type: 'aboriginal',
+              title: '野銀部落',
+              address: ''
+            },
+
+            ];
+
+
+          features.forEach(function(feature) {
+            var marker = new google.maps.Marker({
+            position: feature.position,
+            icon: icons[feature.type].icon,
+            title: feature.title,
+		      	address: feature.address,
+            map: map
+          });
+
+          var infowindow = new google.maps.InfoWindow;
+
+          marker.addListener('mouseover', function(){
+           infowindow.title;
+		       infowindow.setContent(feature.title);
+		       infowindow.open(map, marker);
+		      });
+		  
+		        marker.addListener('mouseout',function(){
+		          infowindow.close();
+		        });
+		  
+         });
+           
         }
     </script>
     
@@ -140,8 +293,6 @@ body {
     <script src="./popper.min.js"></script>
     <script src="./bootstrap.min.js"></script>
     <script src="./dist/js/bootstrap.min.js"></script>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ3KHYNBheFkeRoTTkN9bpO06MD6NUqXo&callback=initMap">
-        </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ3KHYNBheFkeRoTTkN9bpO06MD6NUqXo&callback=initMap"></script>
   </body>
 </html>

@@ -30,6 +30,31 @@ body {
         
         
     }
+#myTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+    background-color: rgb(233, 243, 255)
+}
+
+#myTable th, #myTable th {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd; 
+}
+
+
+#myTable tr.header, #myTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #ddd;
+}  
+
+
 
 	
 </style>
@@ -38,10 +63,10 @@ body {
   <body>
    <table width="100%" border="0" cellpadding="0" cellspacing="0" summary="*" valign="top" >
 	     <tr> 
-	       <td valign="top"><div align="right">
+	       <th valign="top"><div align="right">
 	         <span class="tdbb">│<a title="回首頁" href="./首頁.html">回首頁</a>│<a title="蘭嶼觀光旅遊網" href="http://lanyu.twgov.mobi/travel/" target="_blank">蘭嶼觀光旅遊網</a></span>&nbsp;
 	             </div>
-	       </td>
+	       </th>
 	     </tr> 
     </table>
    
@@ -62,8 +87,15 @@ body {
 			<li class="nav-item ">
                 <a class="nav-link" href="./首頁.html"><font size="4.5">首頁 </font></a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="./旅遊資訊.html"><font size="4.5">旅遊資訊</font></a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="./旅遊資訊.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><font size="4.5">旅遊資訊</font></a>
+	            	<div class="dropdown-menu" aria-labelledby="dropdown01">
+                  <a class="dropdown-item" href="#aiplanetable">定期飛機班表</a>
+                  <a class="dropdown-item" href="#aiplanecost">飛機票價</a>
+                  <a class="dropdown-item" href="#shiptable">船班時刻表</a>
+                  <a class="dropdown-item" href="#shipscost">船票價</a>
+                  <a class="dropdown-item" href="#andsoon">遊玩須知</a>
+                </div>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./文化介紹.html"><font size="4.5">文化介紹</font></a>
@@ -89,17 +121,327 @@ body {
 		
       </header>
 
-    
+      <h4 style="color:chocolate">蘭嶼地圖</h4>
       <div id="map" style="width:100%"></div>
-	  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      
+      <br>
    
-
-      <a href="https://www.tta.gov.tw/schedule/realtime.asp" target="_blank" title="飛機">飛機時刻表</a>
+      <h4 id="aiplane" style="color:chocolate">飛機資訊</h4>
+      <a href="https://www.tta.gov.tw/schedule/realtime.asp" target="_blank" title="飛機">即時飛機時刻表</a>
       <a>&nbsp&nbsp</a>
       <a href="https://www.google.com.tw/search?q=%E6%9D%BE%E5%B1%B1+%E8%98%AD%E5%B6%BC+%E9%A3%9B%E6%A9%9F&spell=1&sa=X&ved=0ahUKEwiivsKw_qfYAhULVrwKHTNKDKkQvwUIIygA&biw=1745&bih=863" target="_blank" title="飛機">台北 -> 蘭嶼</a>
-
+      <br><br>
       
-	  
+      <a id="aiplanetable" style="font-size:20px">德安航空公司 定期航班  台東 ->蘭嶼 &nbsp&nbsp</a> <a style="font-size:13px">V 有航班</a>
+      <table id="myTable" style="width:100%">
+        <tr class="header">
+          <th>班機編號</th>
+          <th>預計起飛時間</th>
+          <th>預計抵達時間</th>
+          <th>日</th>
+          <th>一</th>
+          <th>二</th>
+          <th>三</th>
+          <th>四</th>
+          <th>五</th>
+          <th>六</th>
+        </tr>
+        <tr>
+            <th>7501</th>
+            <th>08:00</th>
+            <th>08:30</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+          <tr>
+            <th>7503</th>
+            <th>09:25</th>
+            <th>09:55</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+          <tr>
+            <th>7505</th>
+            <th>10:00</th>
+            <th>10:30</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+          <tr>
+            <th>7507</th>
+            <th>12:15</th>
+            <th>12:45</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+          <tr>
+            <th>7509</th>
+            <th>13:30</th>
+            <th>14:00</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+          <tr>
+            <th>7511</th>
+            <th>15:30</th>
+            <th>16:30</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+      </table>
+      <br><br>
+
+      <a style="font-size:20px">德安航空公司 定期航班 蘭嶼->台東 &nbsp&nbsp</a> <a style="font-size:13px">V 有航班</a>
+      <table id="myTable" style="width:100%">
+        <tr class="header">
+          <th>班機編號</th>
+          <th>預計起飛時間</th>
+          <th>預計抵達時間</th>
+          <th>日</th>
+          <th>一</th>
+          <th>二</th>
+          <th>三</th>
+          <th>四</th>
+          <th>五</th>
+          <th>六</th>
+        </tr>
+        <tr>
+            <th>7502</th>
+            <th>09:00</th>
+            <th>09:30</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+          <tr>
+            <th>7504</th>
+            <th>10:25</th>
+            <th>10:55</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+          <tr>
+            <th>7506</th>
+            <th>11:00</th>
+            <th>11:30</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+          <tr>
+            <th>7508</th>
+            <th>13:15</th>
+            <th>13:45</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+          <tr>
+            <th>7510</th>
+            <th>14:30</th>
+            <th>15:00</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+          <tr>
+            <th>7512</th>
+            <th>16:30</th>
+            <th>17:00</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+            <th>V</th>
+          </tr>
+      </table>
+      <br><hr>
+      
+
+      <h4 id="aiplanecost" style="color:chocolate">航線飛機票表</h4>
+      <br>
+      <h5>開船時間</h5>
+      <table id="myTable" style="width:100%">
+        <tr class="header">
+          <th columnspan>台東 - 蘭嶼(含稅)</th>
+          <th></th>
+          <th></th>
+          <th>蘭嶼 - 台東(離島免稅)</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>全票</th>
+          <th>兒童票</th>
+          <th>軍人票</th>
+          <th>全票</th>
+          <th>兒童票</th>
+          <th>軍人票</th>
+          </tr>
+        <tr>
+          <th>NTD 1428</th>
+          <th>NTD 1071</th>
+          <th>NTD 1357</th>
+          <th>NTD 1360</th>
+          <th>NTD 1020</th>
+          <th>NTD 1292</th>
+        </tr>
+        <tr>
+          <th>敬老、愛心票</th>
+          <th>離島居民票</th>
+          <th> </th>
+          <th>敬老、愛心票</th>
+          <th>離島居民票</th>
+          <th> </th>
+        </tr>
+        <tr>
+          <th>NTD 714</th>
+          <th>NTD 807</th>
+          <th> </th>
+          <th>NTD 680</th>
+          <th>NTD 769</th>
+          <th> </th>
+        </tr>
+        
+      </table>
+      
+  
+
+
+      <br><hr><hr>
+
+      <h4 id="shiptable" style="color:chocolate">船班時刻表</h4>
+      <br>
+      <h5>開船時間</h5>
+      <table id="myTable" style="width:100%">
+        <tr class="header">
+          <th columnspan="1" style="width:25%">台東富岡->蘭嶼</th>
+          <th></th>
+          <th columnspan="1" style="width:25%">蘭嶼->台東富岡</th>
+          <th></th>
+        </tr>
+        <tr>
+            <th >恆星號</th>
+            <th style="width:25%">綠島之星</th>
+            
+            <th style="width:25%">恆星號</th>
+            <th style="width:25%">綠島之星</th>
+          </tr>
+        <tr>
+          <th>09:15</th>
+          <th>07:30</th>
+          <th>13:00</th>
+          <th>10:00</th>
+        </tr>
+        <tr>
+          <th> </th>
+          <th>13:00</th>
+          <th> </th>
+          <th>15:30</th>
+        </tr>
+      </table>
+      <br><hr>
+
+      <h4 id="shipscost" style="color:chocolate">航線船價表</h4>
+      <br>
+      <h5>開船時間</h5>
+      <table id="myTable" style="width:100%">
+        <tr class="header">
+          <th columnspan="4">台東 - 蘭嶼 航線票價</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+            <th >船票種類</th>
+            <th >適用對象</th>
+            <th >恆星號</th>
+            <th >綠島之星</th>
+          </tr>
+        <tr>
+          <th>來回全票</th>
+          <th>全球民眾</th>
+          <th>NTD 2300</th>
+          <th>NTD 2300</th>
+        </tr>
+        <tr>
+          <th>來回敬老票</th>
+          <th>65歲以上</th>
+          <th>NTD 1800</th>
+          <th>NTD 1700</th>
+        </tr>
+        <tr>
+          <th>來回半票</th>
+          <th>12歲以下</th>
+          <th>NTD 1150</th>
+          <th>NTD 1150</th>
+        </tr>
+        <tr>
+          <th>幼兒票</th>
+          <th>未滿3歲</th>
+          <th>NTD 200</th>
+          <th>NTD 200</th>
+        </tr>
+      </table>
+      <br><hr><hr>
+
+      <a id="andsoon" href="https://travel.lanyu.info/trip-info/%E8%98%AD%E5%B6%BC%E6%97%85%E9%81%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85" target="_blank" title="注意事項" style="font-size:25px">旅遊注意事項 &nbsp&nbsp</a>
+      <a href="http://bob20842.pixnet.net/blog/post/392234581-%E3%80%90%E8%98%AD%E5%B6%BC%E6%97%85%E9%81%8A%E6%99%AF%E9%BB%9E%E7%BE%8E%E9%A3%9F%E6%87%B6%E4%BA%BA%E5%8C%85%E3%80%91%E9%80%99%E6%A8%A3%E7%8E%A9%E8%98%AD%E5%B6%BC%E5%90%AB%E8%A1%8C" target="_blank" title="玩蘭嶼" style="font-size:25px">看看別人怎麼遊玩蘭嶼</a>
+        
+        
 	  
 
       <main role="main">
@@ -283,7 +625,30 @@ body {
            
         }
     </script>
-    
+
+    <!--table -->
+    <script>
+      function myFunction() {
+        // Declare variables 
+        var input, filter, table, tr, th, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+      
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+          th = tr[i].getElementsByTagName("th")[0];
+          if (th) {
+            if (th.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          } 
+        }
+      }
+      </script>    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
